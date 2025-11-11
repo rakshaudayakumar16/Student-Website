@@ -1,0 +1,468 @@
+/* -------------------------------
+   Global Reset & Body Styling
+--------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* -------------------------------
+   Container & Header
+--------------------------------*/
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+/* -------------------------------
+   Controls (Search + Buttons)
+--------------------------------*/
+.controls {
+    padding: 30px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* -------------------------------
+   Button Styles
+--------------------------------*/
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+}
+
+.btn-edit {
+    background: #28a745;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.btn-edit:hover {
+    background: #218838;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* -------------------------------
+   Table Styles
+--------------------------------*/
+.table-container {
+    overflow-x: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.loading,
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+    font-size: 18px;
+}
+
+/* -------------------------------
+   Modal Styles
+--------------------------------*/
+.modal-content {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header h2,
+.modal-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* -------------------------------
+   Form Styles
+--------------------------------*/
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-hint {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* -------------------------------
+   Toast Notification
+--------------------------------*/
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    max-width: 500px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 2000;
+    bottom: 30px;
+    right: 30px;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.toast.show {
+    visibility: visible;
+    animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+}
+
+.toast.success {
+    background-color: #28a745;
+}
+
+.toast.error {
+    background-color: #dc3545;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.toast.error.show {
+    animation: fadeIn 0.5s, fadeOut 0.5s 4.5s;
+}
+
+@keyframes fadeIn {
+    from { bottom: 0; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { bottom: 30px; opacity: 1; }
+    to { bottom: 0; opacity: 0; }
+}
+
+/* -------------------------------
+   Responsive Design
+--------------------------------*/
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary, .btn-secondary, .btn-danger {
+        width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px 8px;
+    }
+
+    .toast {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        min-width: auto;
+    }
+
+    /* Make table scrollable */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Mobile Stack View (very small screens) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .search-input {
+        font-size: 14px;
+    }
+
+    .btn-primary, .btn-secondary, .btn-danger {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    tbody td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    tbody td:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Tablet specific */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+@media (max-width: 600px) {
+    /* Reduce side padding and make container full width */
+    .container {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Make buttons smaller and evenly spaced */
+    .action-buttons button,
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger {
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 6px;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    /* Compact student cards */
+    .student-card {
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 12px;
+        margin-bottom: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .student-card p {
+        font-size: 14px;
+        margin: 3px 0;
+    }
+
+    .student-card .btn-edit,
+    .student-card .btn-delete {
+        font-size: 13px;
+        padding: 6px 10px;
+        border-radius: 5px;
+    }
+
+    /* Center edit/delete buttons horizontally */
+    .student-card .btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+    }
+
+    /* Reduce header padding */
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 1.4em;
+    }
+}
